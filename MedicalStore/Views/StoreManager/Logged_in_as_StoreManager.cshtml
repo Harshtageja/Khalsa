@@ -1,0 +1,136 @@
+﻿@model IEnumerable<Inventory>
+@using Microsoft.AspNetCore.Http
+@using MedicalStore.Controllers
+@inject IHttpContextAccessor HttpContextAccessor
+
+<style>
+    .central{
+        text-align:center;
+        margin:3% auto;
+    }
+    .heading{
+        margin:auto 20%;
+        text-align:center;
+    }
+</style>
+
+@*<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <div class="container-fluid">
+        <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MedicalStore</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+            <ul class="navbar-nav flex-grow-1">
+                @if(HttpContextAccessor.HttpContext.Session.GetString("role")=="StoreManager"){
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="StoreManager" asp-action="NewStoreKeeper">Add New Store Keeper</a>
+                </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="StoreManager" asp-action="Approve">Pendings</a>
+                    </li>
+                }
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="StoreManager" asp-action="AddItem">Add new Item</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="StoreManager" asp-action="LogOut">Log Out</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="StoreManager" asp-action="Billing">Billing</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>*@
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+            <a class="navbar-brand" asp-area="" asp-controller="StoreManager" asp-action="Logged_in_as_StoreManager">MedicalStore</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarColor02">
+            <ul class="navbar-nav me-auto">
+                @if(HttpContextAccessor.HttpContext.Session.GetString("role")=="StoreManager"){
+                <li class="nav-item">
+                        <a class="nav-link "  asp-area="" asp-controller="StoreManager" asp-action="NewStoreKeeper">Add New Store Keeper</a>
+                </li>
+                    <li class="nav-item">
+                        <a class="nav-link " asp-area="" asp-controller="StoreManager" asp-action="Approve">Pendings</a>
+                    </li>
+                }
+                <li class="nav-item">
+                    <a class="nav-link " asp-area="" asp-controller="StoreManager" asp-action="AddItem">Add new Item</a>
+                </li>
+
+               
+                <li class="nav-item">
+                    <a class="nav-link " asp-area="" asp-controller="StoreManager" asp-action="Billing">Billing</a>
+                </li>
+                    <li class="nav-item">
+                        <a class="nav-link " asp-area="" asp-controller="StoreManager" asp-action="AllOrders">Orders</a>
+                    </li>
+                   
+            </ul>
+            <form class="d-flex">
+               
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">  <a class="nav-link text-dark" asp-area="" asp-controller="StoreManager" asp-action="LogOut" style="text-decoration:none">Log Out</a></button>
+            </form>
+        </div>
+    </div>
+</nav>
+ @if(HttpContextAccessor.HttpContext.Session.GetString("role")=="StoreManager"){
+    <h2 class="central">Logged in as Store Manager</h2>
+}
+    else
+    {
+        <h2 class="central">Logged in as Store Keeper</h2>
+    }
+</h2>
+<h2 class="heading">
+    Inventory
+</h2>
+
+<div class="container1">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Medicine</th>
+       <th scope="col">Stock in</th>
+      <th scope="col">Stock out</th>
+      <th scope="col">Expired</th>
+      <th scope="col">Final</th>
+    </tr>
+  </thead>
+  <tbody>
+                @foreach (var obj in Model)
+                {
+            <tr class="table-Light">
+                  <td>
+                            @obj.MedicineName
+                        </td>
+                        <td>
+                            @obj.StockIn
+                        </td>
+                        <td>
+                            @obj.StockOut
+                        </td>
+                        <td>
+                            @obj.Expired
+                        </td>
+                        <td>
+                            @obj.Final
+                        </td>
+                        <td>
+                            <a asp-controller="StoreManager" asp-action="Sell" asp-route-id="@obj.id">Sell</a>
+                        </td>
+            </tr>
+                }
+  </tbody>
+</table>
+</div>
+
+</body>

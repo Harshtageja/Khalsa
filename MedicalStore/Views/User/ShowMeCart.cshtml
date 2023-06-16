@@ -1,0 +1,191 @@
+﻿@model IEnumerable<cartWithMedicineName>
+@{
+    var sum = 0;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style type="text/css">
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            text-align: left;
+        }
+
+        th {
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2
+        }
+
+        td:nth-child(2),
+        th:nth-child(2) {
+            width: 1%;
+        }
+
+        .Countcontainer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white; border-radius: 5px;
+            border: 1px solid black;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            border: none;
+        }
+
+            .button:hover {
+                background-color: #3e8e41;
+            }
+
+            .button:active {
+                background-color: #3e8e41;
+                box-shadow: 0 5px #666;
+                transform: translateY(4px);
+            }
+
+        .count {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #3e8e41 border-radius: 5px;
+            font-size: 16px;
+            text-align: center;
+            margin: -0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>My Cart</h1>
+
+    <div class="row">
+        <div class="col-md-8">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th colspan="3">Product</th>
+                        <th colspan="2">Quantity</th>
+                        <th>Price</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var obj in Model){
+                        <tr>
+                            @{
+                                sum += obj.UnitPrice * obj.counting;
+                            }
+                            <td colspan="3">@obj.MedicineName</td>
+                        
+                        <td colspan="2">
+                                @obj.counting
+                                
+                           </td>
+                        <td>@obj.UnitPrice</td>
+                            <td><a onclick='Users.OpenCartModal(@(obj.MedicineID))'>View Details</a></td>
+                    </tr>
+                    }
+                   
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-md-4">
+            <h3>Cart Summary</h3>
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th>Subtotal:</th>
+                        <td>Rs @sum</td>
+                    </tr>
+                    <tr>
+                        <th>Tax:</th>
+                        <td>Rs 0</td>
+                    </tr>
+                    <tr>
+                        <th>Total:</th>
+                        <td>Rs @sum</td>
+                    </tr>
+                </tbody>
+            </table>
+            <a class="btn btn-primary" asp-controller="User" asp-action="PlaceOrder">Checkout</a>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    This is a medicine Description<br />
+                    <img src="/image/four.png" style="height:200px;width:200px" />
+                    <div style="background-color:#4CAF50;width: 15%;display:inline">
+                        <button id="decrement" class="button">-</button>
+                        <div id="count" class="count">0</div>
+                        <button id="increment" class="button">+</button>
+                    </div>
+                </div>
+
+                <input type="text" id="MedicineID" hidden />
+                <input type="text" id="UnitPrice" hidden />
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="$('#exampleModal').modal('hide');">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="Users.AddtoCart()">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        // Get the increment, decrement, and count elements
+        const incrementBtn = document.getElementById("increment");
+        const decrementBtn = document.getElementById("decrement");
+        const countEl = document.getElementById("count");
+
+        // Set the initial count value
+        let count = 0;
+
+        // Add an event listener to the increment button
+        incrementBtn.addEventListener("click", function() {
+            count = countEl.innerText;
+            count++;
+            countEl.innerText = count;
+        });
+
+        // Add an event listener to the decrement button
+        decrementBtn.addEventListener("click", function() {
+            count = countEl.innerText;
+            if(count>0)
+            count--;
+            countEl.innerText = count;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+﻿@model IEnumerable<OrderShown>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" asp-area="" asp-controller="User" asp-action="SearchingPage">MedicalStore</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarColor02">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link " asp-area="" asp-controller="User" asp-action="ShowMeCart">My Cart</a>
+                </li>
+
+            </ul>
+            <form class="d-flex">
+
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">  <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="LogOut" style="text-decoration:none">Log Out</a></button>
+            </form>
+        </div>
+    </div>
+</nav>
+<div class="container1">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Medicine Name</th>
+                <th scope="col">Count</th>
+                <th scope="col">Each Item Cost</th>
+                <th scope="col">Net Price</th>
+                <th scope="col">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var obj in Model)
+            {
+                <tr class="table-Light">
+                    <td>
+                        @obj.MedicineName
+                    </td>
+                    <td>
+                        @obj.Counting
+                    </td>
+                    <td>
+                        @obj.cost_per_item
+                    </td>
+                    <td>
+                        @(obj.Counting*obj.cost_per_item)
+                    </td>
+                    <td>
+                        @obj.STATUS
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>

@@ -1,0 +1,113 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = MedicalStore
+build_property.RootNamespace = MedicalStore
+build_property.ProjectDir = C:\Users\DELL\source\repos\MedicalStore\MedicalStore\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
+build_property.MSBuildProjectDirectory = C:\Users\DELL\source\repos\MedicalStore\MedicalStore
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/DELL/source/repos/MedicalStore/MedicalStore/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DELL/source/repos/MedicalStore/MedicalStore/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DELL/source/repos/MedicalStore/MedicalStore/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DELL/source/repos/MedicalStore/MedicalStore/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DELL/source/repos/MedicalStore/MedicalStore/Views/StoreKeeper/AddItem.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVLZWVwZXJcQWRkSXRlbS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DELL/source/repos/MedicalStore/MedicalStore/Views/StoreKeeper/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVLZWVwZXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DELL/source/repos/MedicalStore/MedicalStore/Views/StoreKeeper/Logged_in_as_StoreKeeper.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVLZWVwZXJcTG9nZ2VkX2luX2FzX1N0b3JlS2VlcGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DELL/source/repos/MedicalStore/MedicalStore/Views/StoreManager/AddItem.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVNYW5hZ2VyXEFkZEl0ZW0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DELL/source/repos/MedicalStore/MedicalStore/Views/StoreManager/AllOrders.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVNYW5hZ2VyXEFsbE9yZGVycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DELL/source/repos/MedicalStore/MedicalStore/Views/StoreManager/Approve.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVNYW5hZ2VyXEFwcHJvdmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DELL/source/repos/MedicalStore/MedicalStore/Views/StoreManager/Billing.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVNYW5hZ2VyXEJpbGxpbmcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DELL/source/repos/MedicalStore/MedicalStore/Views/StoreManager/CustomerLogin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVNYW5hZ2VyXEN1c3RvbWVyTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DELL/source/repos/MedicalStore/MedicalStore/Views/StoreManager/CustomerSignUp.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVNYW5hZ2VyXEN1c3RvbWVyU2lnblVwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DELL/source/repos/MedicalStore/MedicalStore/Views/StoreManager/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVNYW5hZ2VyXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DELL/source/repos/MedicalStore/MedicalStore/Views/StoreManager/Logged_in_as_StoreManager.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVNYW5hZ2VyXExvZ2dlZF9pbl9hc19TdG9yZU1hbmFnZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DELL/source/repos/MedicalStore/MedicalStore/Views/StoreManager/NewStoreKeeper.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVNYW5hZ2VyXE5ld1N0b3JlS2VlcGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DELL/source/repos/MedicalStore/MedicalStore/Views/StoreManager/Sell.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVNYW5hZ2VyXFNlbGwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DELL/source/repos/MedicalStore/MedicalStore/Views/User/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DELL/source/repos/MedicalStore/MedicalStore/Views/User/MyOrders.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxNeU9yZGVycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DELL/source/repos/MedicalStore/MedicalStore/Views/User/SearchingPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxTZWFyY2hpbmdQYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DELL/source/repos/MedicalStore/MedicalStore/Views/User/ShowMeCart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxTaG93TWVDYXJ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DELL/source/repos/MedicalStore/MedicalStore/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DELL/source/repos/MedicalStore/MedicalStore/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DELL/source/repos/MedicalStore/MedicalStore/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-37x1u7mqjw

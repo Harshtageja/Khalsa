@@ -1,0 +1,37 @@
+﻿@model StoreManager
+<style>
+    .central {
+        text-align: center;
+        margin: 3% auto;
+    }
+</style>
+
+<body class="bodyadd">
+
+    <div class="glass-container">
+        <div class="blob">
+        </div>
+        <div class="blob2">
+        </div>
+        <form class="glass-form" method="POST">
+            <h2 class="central">Add StoreKeeper</h2>
+
+            <input class="inputadd" asp-for="Name" placeholder="Name">
+            <span asp-validation-for="Name" class="text-danger"></span>
+            <input class="inputadd" asp-for="Email" placeholder="Email">
+            <span asp-validation-for="Email" class="text-danger"></span>
+            <input class="inputadd" asp-for="role" placeholder="Email" value="StoreKeeper" type="hidden">
+
+            <input class="inputadd" type="password" asp-for="Password" placeholder="Password" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+
+            <button type="submit">Register</button>
+
+        </form>
+    </div>
+</body>
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial"></partial>
+    }
+}

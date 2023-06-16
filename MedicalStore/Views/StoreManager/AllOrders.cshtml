@@ -1,0 +1,57 @@
+﻿@model IEnumerable<OrderShown>
+<div class="container1">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Medicine Name</th>
+                <th scope="col">Count</th>
+                <th scope="col">Each Item Cost</th>
+                <th scope="col">Net Price</th>
+                <th scope="col">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var obj in Model)
+            {
+                var FUTURE = string.Empty;
+
+                    if (obj.STATUS == "PENDING")
+                    {
+                     FUTURE = "PACKED";
+                    }
+                else if (obj.STATUS == "PACKED")
+                {
+                     FUTURE = "SHIPPED";
+                }
+                else
+                {
+                     FUTURE = "DELIVERED";
+                }
+
+                <tr class="table-Light">
+                    <td>
+                        @obj.MedicineName
+                    </td>
+                    <td>
+                        @obj.Counting
+                    </td>
+                    <td>
+                        @obj.cost_per_item
+                    </td>
+                    <td>
+                        @(obj.Counting * obj.cost_per_item)
+                    </td>
+                    @if(@obj.STATUS=="DELIVERED"){
+                    <td>
+                        DELIVERED
+                    </td>
+                    }
+                    else{
+                    <td>
+                        <a class="btn btn-primary" onclick="Users.changeStatus(@obj.Id,'@FUTURE')" >@FUTURE</a>
+                    </td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>

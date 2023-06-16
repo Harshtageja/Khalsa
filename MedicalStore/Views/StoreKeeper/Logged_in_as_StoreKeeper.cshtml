@@ -1,0 +1,73 @@
+﻿@model IEnumerable<Inventory>
+<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <div class="container-fluid">
+        <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MedicalStore</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+            <ul class="navbar-nav flex-grow-1">
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="StoreKeeper" asp-action="Index">Login as Store Keeper</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="StoreManager" asp-action="Index">Login as Store Manager</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<h2>
+    Logged in as Store keeper
+</h2>
+<h2>
+    Inventory
+</h2>
+<a asp-controller="StoreKeeper" asp-action="AddItem">Add New Item</a>
+<table>
+    <thead>
+        <tr>
+            <th>
+                Medicine
+            </th>
+            <th>
+                Stock in
+            </th>
+            <th>
+                Stock out
+            </th>
+            <th>
+                Expired
+            </th>
+            <th>
+                Final
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var obj in Model)
+        {
+            <tr>
+                <td>
+                    @obj.MedicineName
+                </td>
+                <td>
+                    @obj.StockIn
+                </td>
+                <td>
+                    @obj.StockOut
+                </td>
+                <td>
+                    @obj.Expired
+                </td>
+                <td>
+                    @obj.Final
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

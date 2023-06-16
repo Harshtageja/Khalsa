@@ -1,0 +1,29 @@
+﻿@model Inventory
+
+<body class="bodyadd">
+
+<div class="glass-container">
+  <div class="blob">
+  </div>
+  <div class="blob2">
+  </div>
+  <form class="glass-form" method="POST">
+    <h2>ADD PRODUCT</h2>
+    <input class="inputadd" asp-for="MedicineName" placeholder="Medicine Name">
+            <span asp-validation-for="MedicineName" class="text-danger"></span>
+    <input  class="inputadd" asp-for="StockIn" placeholder="Stock in">
+            <span asp-validation-for="StockIn" class="text-danger"></span>
+    <input  class="inputadd" asp-for="Expired" placeholder="Expired">
+            <span asp-validation-for="Expired" class="text-danger"></span>
+            <input class="inputadd" asp-for="Price" placeholder="Price">
+            <span asp-validation-for="Price" class="text-danger"></span>
+    <button type="submit">ADD</button>
+    
+  </form>
+</div>
+</body>
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial"></partial>
+    }
+}

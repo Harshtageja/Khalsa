@@ -1,0 +1,88 @@
+﻿@model IEnumerable<Billing>
+@using Microsoft.AspNetCore.Http
+@using MedicalStore.Controllers
+@inject IHttpContextAccessor HttpContextAccessor
+    <style>
+    .central{
+        text-align:center;
+        margin:3% auto;
+    }
+    .heading{
+        margin:auto 20%;
+    }
+</style>
+<body class="bodyadd">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" asp-area="" asp-controller="StoreManager" asp-action="Logged_in_as_StoreManager">MedicalStore</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarColor02">
+                <ul class="navbar-nav me-auto">
+                    @if (HttpContextAccessor.HttpContext.Session.GetString("role") == "StoreManager")
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link " asp-area="" asp-controller="StoreManager" asp-action="NewStoreKeeper">Add New Store Keeper</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " asp-area="" asp-controller="StoreManager" asp-action="Approve">Pendings</a>
+                        </li>
+                    }
+                    <li class="nav-item">
+                        <a class="nav-link " asp-area="" asp-controller="StoreManager" asp-action="AddItem">Add new Item</a>
+                    </li>
+
+
+                    
+                </ul>
+                <form class="d-flex">
+
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">  <a class="nav-link text-dark" asp-area="" asp-controller="StoreManager" asp-action="LogOut" style="text-decoration:none">Log Out</a></button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <h2 class="central">
+        History
+        
+
+    </h2>
+
+    <div class="container1">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Phone Number</th>
+                    <th scope="col">Medicine Name</th>
+                    <th scope="col">Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var obj in Model)
+                {
+                    <tr class="table-light">
+                        <td>
+                            @obj.Name
+                        </td>
+                        <td>
+                            @obj.Address
+                        </td>
+                        <td>
+                            @obj.Phone
+                        </td>
+                        <td>
+                            @obj.MedicineName
+                        </td>
+                        <td>
+                            @obj.Quantity
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</body>
